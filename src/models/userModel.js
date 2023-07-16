@@ -6,10 +6,11 @@ const userSchema = new mongoose.Schema(
     lastName: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
+    rol: { type: String, required: true },
     createdAt: { type: Date, default: Date.now }, // Fecha de creación
     modifiedAt: { type: Date }, // Fecha de modificación
   },
-  { collection: "earnings" }
+  { collection: "user" }
 );
 
 // Middleware para establecer createdAt antes de guardar el documento
