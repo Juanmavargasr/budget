@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
     createdAt: { type: Date, default: Date.now }, // Fecha de creación
     modifiedAt: { type: Date }, // Fecha de modificación
   },
-  { collection: "user" }
+  { collection: "users" }
 );
 
 // Middleware para establecer createdAt antes de guardar el documento
