@@ -1,0 +1,7 @@
+Recursos
+
+id: ID del recurso (generado automáticamente)
+nombre: Nombre del recurso (por ejemplo, "Efectivo", "Cuenta de ahorros")
+valorInicial: Valor inicial del recurso
+activo: Indicador de si el recurso está activo o inactivo
+saldo: Suma Earnings y resta expenses

@@ -5,12 +5,12 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 
 const createUser = async (req, res) => {
+  const { Name, lastName, email, password, rol } = req.body;
   try {
-    const { firstName, lastName, email, password, rol } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({
-      firstName,
+      Name,
       lastName,
       email: email.toLowerCase(),
       password: hashedPassword,
@@ -49,13 +49,13 @@ const logIn = async (req, res) => {
 
     const payload = {
       _id: user._id,
-      firstName: user.firstName,
+      Name: user.Name,
       rol: user.rol,
     };
 
     //Create a token
     const generateAccessToken = (payload) => {
-      return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "5m" });
+      return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "60m" });
     };
 
     const accessToken = generateAccessToken(payload);
