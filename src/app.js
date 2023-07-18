@@ -1,5 +1,6 @@
 const express = require("express");
 const userRouter = require("./routes/usersRoutes");
+const sourceRouter = require("./routes/sourcesRoutes");
 require("dotenv").config();
 
 const app = express();
@@ -21,9 +22,7 @@ app.use(express.json());
 
 app.use("/users", userRouter);
 
-app.use("/sources", (req, res) => {
-  res.status(200).send("AQUÍ VA LÓGICA");
-});
+app.use("/sources", sourceRouter);
 
 app.use("/earnings", (req, res) => {
   res.status(200).send("AQUÍ VA LÓGICA");

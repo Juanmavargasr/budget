@@ -23,8 +23,8 @@ const createSource = async (req, res) => {
       initialValue,
     });
 
-    await newSource.save();
-    sourceOwner.source.push(finalSource);
+    // await newSource.save();
+    sourceOwner.source.push(newSource);
     await sourceOwner.save();
     // await sourceOwner.save();
 
