@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const userSchema = new mongoose.Schema(
   {
@@ -7,8 +8,10 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true },
     password: { type: String, required: true },
     rol: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now }, // Fecha de creación
-    modifiedAt: { type: Date }, // Fecha de modificación
+    balance: { type: Number, default: 0 },
+    source: [{ type: mongoose.Schema.Types.ObjectId, ref: "Source" }],
+    createdAt: { type: Date, default: Date.now },
+    modifiedAt: { type: Date },
   },
   { collection: "users" }
 );
