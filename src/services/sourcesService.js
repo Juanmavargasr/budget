@@ -7,7 +7,7 @@ const validateSourceCreateInfo = async (req, res, next) => {
     if (!name || !initialValue) {
       res.status(400).json({ error: "all data is mandatory" });
     } else {
-      console.log("Succesfully validation");
+      console.log("Succesfully Source Creation validation");
       next();
     }
   } catch (error) {

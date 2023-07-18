@@ -12,7 +12,7 @@ const sourceSchema = new mongoose.Schema(
     modifiedAt: { type: Date },
   },
   //   { _id: false }
-  { collection: "source" }
+  { collection: "sources" }
 );
 
 // Middleware para establecer createdAt antes de guardar el documento

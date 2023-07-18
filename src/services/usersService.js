@@ -15,7 +15,7 @@ const validateUserCreateInfo = async (req, res, next) => {
         if (!firstName || !lastName || !email || !password || !rol) {
           res.status(400).json({ error: "all data is mandatory" });
         } else {
-          console.log("Succesfully validation");
+          console.log("Succesfully User Creation validation");
           next();
         }
       }
